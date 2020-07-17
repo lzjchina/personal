@@ -1,0 +1,22 @@
+.Home {
+  width: 100%;
+  .topSection {
+    width: 100%;
+    height: 736px;
+    background: url("../../assets/img/bg/head_bg.png") center/ 100% 100%
+      no-repeat;
+    .main {
+      width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+      img {
+        position: absolute;
+        right: 0;
+        bottom: 18px;
+        width: 640px;
+        height: 406px;
+      }
+    }
+  }
+}

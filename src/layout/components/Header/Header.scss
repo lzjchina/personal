@@ -1,0 +1,35 @@
+.HeaderDiv {
+  width: 100%;
+  height: 56px;
+  background-color: #1b3554;
+  .HeaderBox {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      width: 41px;
+      height: 35px;
+    }
+    nav {
+      height: 56px;
+      .ant-menu {
+        .ant-menu-item {
+          padding: 0;
+          border-bottom: 5px solid transparent;
+          margin: 0 40px;
+        }
+        .ant-menu-item-selected {
+          color: #fff;
+          border-bottom: 5px solid #ff666a;
+        }
+        .ant-menu-item-active {
+          color: #fff;
+          border-bottom: 5px solid #ff666a;
+        }
+      }
+    }
+  }
+}
