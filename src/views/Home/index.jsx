@@ -7,7 +7,7 @@ export class Home extends Component {
       <div className="Home">
         <section className="topSection">
           <div className="main">
-            <img src={require('../../assets/img/bg/home_icon.png')} alt=""/>
+            <img src={require('@/assets/img/bg/home_icon.png')} alt=""/>
           </div>
         </section>
       </div>

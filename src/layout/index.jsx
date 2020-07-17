@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { Affix } from "antd";
-import test from "../views/test/test";
-import Home from "../views/Home/index";
+import test from "@/views/test/test";
+import Home from "@/views/Home/index";
 import Header from "./components/Header/Header";
 
 export class Layout extends Component {

@@ -33,7 +33,7 @@ export class Header extends Component {
       >
         <div className="HeaderBox">
           <img
-            src={require("../../../assets/img/logo.png")}
+            src={require("@/assets/img/logo.png")}
             className="logo"
             alt=""
           />
