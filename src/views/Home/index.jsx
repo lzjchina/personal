@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Home.scss";
+import RecommendedContent from "./components/RecommendedContent";
+import PopularContent from "./components/PopularContent";
 
 export class Home extends Component {
   render() {
@@ -7,9 +9,14 @@ export class Home extends Component {
       <div className="Home">
         <section className="topSection">
           <div className="main">
-            <img src={require('@/assets/img/bg/home_icon.png')} alt=""/>
+            <div className="home_title_cn"></div>
+            <div className="home_title"></div>
+            <div className="moreBtn">了解更多</div>
+            <div className="homeIcon"></div>
           </div>
         </section>
+        <RecommendedContent></RecommendedContent>
+        <PopularContent></PopularContent>
       </div>
     );
   }
