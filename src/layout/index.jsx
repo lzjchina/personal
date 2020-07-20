@@ -33,14 +33,14 @@ export class Layout extends Component {
         <header style={headerStyle}>
           <Header location={this.props.location} />
         </header>
-        <main style={this.props.location.pathname === "/layout" ? {} : mt56}>
-          <Route exact path="/layout" component={Home}></Route>
+        <main style={this.props.location.pathname === "/blog" ? {} : mt56}>
+          <Route exact path="/blog" component={Home}></Route>
           <Route
-            path="/layout/technicalCommunity"
+            path="/blog/technicalCommunity"
             component={TechnicalCommunity}
           ></Route>
-          <Route path="/layout/siteNav" component={SiteNav}></Route>
-          <Route path="/layout/articleDetails" component={ArticleDetails}></Route>
+          <Route path="/blog/siteNav" component={SiteNav}></Route>
+          <Route path="/blog/articleDetails" component={ArticleDetails}></Route>
         </main>
         <footer style={footerStyle}>版权所有&copy;lzjchina</footer>
       </div>

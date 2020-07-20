@@ -21,13 +21,13 @@ export class Header extends Component {
     this.handleBg();
   };
   handleBg(path) {
-    if (path === "/layout") {
+    if (path === "/blog") {
       this.setState({ showBg: false });
     } else {
       this.setState({ showBg: true });
     }
     window.onscroll = () => {
-      if (path === "/layout") {
+      if (path === "/blog") {
         if (document.documentElement.scrollTop > 150) {
           this.setState({ showBg: true });
         } else {
