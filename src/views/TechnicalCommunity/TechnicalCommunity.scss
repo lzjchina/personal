@@ -1,0 +1,67 @@
+.TechnicalCommunity {
+  .topSection {
+    width: 100%;
+    height: 320px;
+    background: url("../../assets/img/bg/jssq_bg.png") center/ 100% 100%
+      no-repeat;
+    .cont {
+      width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+      .contentImg {
+        width: 508px;
+        height: 114px;
+        position: absolute;
+        left: 32px;
+        top: 78px;
+        background: url("../../assets/img/bg/content.png") center/ 100% 100%
+          no-repeat;
+      }
+      .iconImg {
+        width: 348px;
+        height: 182px;
+        top: 96px;
+        right: 79px;
+        position: absolute;
+        background: url("../../assets/img/bg/jssq_icon.png") center/ 100% 100%
+          no-repeat;
+      }
+    }
+  }
+}
+.navSection {
+  width: 100%;
+  background-color: #fff;
+  // height: 86px;
+  height: 60px;
+  .navMain {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+.mainCont {
+  width: 100%;
+  background-color: #f1f4f9;
+  padding: 10px 0 100px 0;
+  .box {
+    width: 1200px;
+    min-height: 500px;
+    margin: 0 auto;
+    .items {
+      width: 100%;
+      height: 122px;
+      margin-bottom: 10px;
+      .title {
+        font-size: 18px;
+        color: #353535;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 18px;
+        color: #7a7a7a;
+      }
+    }
+  }
+}

@@ -11,9 +11,11 @@ export class Header extends Component {
       current: "/",
       showBg: false,
       path: props.location.pathname,
+      a: "",
+      b: 0
     };
   }
-  handleClick = (e) => {
+  handleClick = e => {
     // console.log("click ", e);
     this.setState({ current: e.key });
     this.handleBg();
@@ -36,11 +38,17 @@ export class Header extends Component {
       }
     };
   }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.location.pathname !== this.state.current) {
+      this.handleBg(this.props.location.pathname);
+    }
+  }
   UNSAFE_componentWillMount() {
     this.setState({ current: this.props.location.pathname });
   }
   componentDidMount() {
     this.handleBg(this.props.location.pathname);
+    console.log(this.state.a);
   }
   render() {
     const { current } = this.state;
@@ -50,7 +58,7 @@ export class Header extends Component {
       border: 0,
       height: "51px",
       lineHeight: "51px",
-      color: "#fff",
+      color: "#fff"
     };
     return (
       <div
@@ -66,24 +74,13 @@ export class Header extends Component {
               mode="horizontal"
               style={MenuStyle}
             >
-              {menu.map((items) => (
+              {menu.map(items => (
                 <Menu.Item key={items.path}>
                   <Link to={items.path} className="linkStyle">
                     {items.name}
                   </Link>
                 </Menu.Item>
               ))}
-              {/* 
-              <Menu.Item key="app">
-                <Link to="/technicalCommunity" className="linkStyle">
-                  技术社区
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="alipay">
-                <Link to="/siteNav" className="linkStyle">
-                  网站导航
-                </Link>
-              </Menu.Item> */}
             </Menu>
           </nav>
         </div>

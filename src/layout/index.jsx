@@ -5,24 +5,20 @@ import test from "@/views/test/test";
 import Home from "@/views/Home/index";
 import TechnicalCommunity from "@/views/TechnicalCommunity/TechnicalCommunity";
 import SiteNav from "@/views/SiteNav/SiteNav";
+import ArticleDetails from "@/views/ArticleDetails/ArticleDetails";
 
 export class Layout extends Component {
   render() {
     const mt56 = {
       marginTop: "56px",
       position: "relative",
-      zIndex: 0,
+      zIndex: 0
     };
-    const zIndex2 = {
+    const headerStyle = {
       zIndex: 20,
       position: "fixed",
       top: 0,
-      width: " 100%",
-    };
-    const headerStyle = {
-      position: "fixed",
-      top: 0,
-      width: " 100%",
+      width: " 100%"
     };
     const footerStyle = {
       width: "100%",
@@ -31,13 +27,11 @@ export class Layout extends Component {
       lineHeight: "35px",
       backgroundColor: "#0D2541",
       color: "#fff",
-      fontSize: "14px",
+      fontSize: "14px"
     };
     return (
       <div style={{ minWidth: "1200px" }}>
-        <header
-          style={this.props.location.pathname === "/" ? zIndex2 : headerStyle}
-        >
+        <header style={headerStyle}>
           <Header location={this.props.location} />
         </header>
         <main style={this.props.location.pathname === "/" ? {} : mt56}>
@@ -47,6 +41,7 @@ export class Layout extends Component {
             component={TechnicalCommunity}
           ></Route>
           <Route path="/siteNav" component={SiteNav}></Route>
+          <Route path="/articleDetails" component={ArticleDetails}></Route>
           <Route path="/test" component={test}></Route>
         </main>
         <footer style={footerStyle}>版权所有&copy;lzjchina</footer>
