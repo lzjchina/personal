@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import test from "@/views/test/test";
 import Home from "@/views/Home/index";
 import TechnicalCommunity from "@/views/TechnicalCommunity/TechnicalCommunity";
 import SiteNav from "@/views/SiteNav/SiteNav";
@@ -34,15 +33,14 @@ export class Layout extends Component {
         <header style={headerStyle}>
           <Header location={this.props.location} />
         </header>
-        <main style={this.props.location.pathname === "/" ? {} : mt56}>
-          <Route exact path="/" component={Home}></Route>
+        <main style={this.props.location.pathname === "/layout" ? {} : mt56}>
+          <Route exact path="/layout" component={Home}></Route>
           <Route
-            path="/technicalCommunity"
+            path="/layout/technicalCommunity"
             component={TechnicalCommunity}
           ></Route>
-          <Route path="/siteNav" component={SiteNav}></Route>
-          <Route path="/articleDetails" component={ArticleDetails}></Route>
-          <Route path="/test" component={test}></Route>
+          <Route path="/layout/siteNav" component={SiteNav}></Route>
+          <Route path="/layout/articleDetails" component={ArticleDetails}></Route>
         </main>
         <footer style={footerStyle}>版权所有&copy;lzjchina</footer>
       </div>

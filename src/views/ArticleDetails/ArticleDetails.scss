@@ -4,10 +4,55 @@
   background-color: #f1f4f9;
   main {
     width: 1200px;
+    min-height: calc(100vh - 90px);
     margin: 0 auto;
     background-color: #fff;
     display: flex;
+    justify-content: space-between;
+    .articleSection {
+      width: 960px;
+      .articleText {
+        padding: 0 40px;
+        border-bottom: 1px solid #eaeef5;
+        .articleName {
+          margin: 37px 0 20px 0;
+          color: #353535;
+          font-size: 30px;
+          font-weight: 500;
+        }
+        .metaBox {
+          display: flex;
+          div {
+            margin-right: 34px;
+            display: flex;
+            align-items: center;
+            .timeIcon {
+              width: 18px;
+              height: 16px;
+              background: url("../../assets/img/icon/updata@2x.png") center /
+                100% 100% no-repeat;
+            }
+            .lookIcon {
+              width: 26px;
+              height: 12px;
+              background: url("../../assets/img/icon/read@2x.png") center / 100%
+                100% no-repeat;
+            }
+            span {
+              font-size: 14px;
+              color: #939393;
+              margin-left: 6px;
+            }
+          }
+        }
+      }
+    }
     .navigation {
+      width: 240px;
+    }
+    .catalog {
+      padding: 0;
+      margin: 0;
     }
   }
 }

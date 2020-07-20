@@ -1,16 +1,16 @@
 const menu = [
   {
-    path: "/",
+    path: "/layout",
     name: "首页",
     children: [],
   },
   {
-    path: "/technicalCommunity",
+    path: "/layout/technicalCommunity",
     name: "技术社区",
     children: [],
   },
   {
-    path: "/siteNav",
+    path: "/layout/siteNav",
     name: "网站导航",
     children: [],
   },
