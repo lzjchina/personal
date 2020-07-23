@@ -10,7 +10,7 @@ export class ArticleDetails extends Component {
   constructor() {
     super();
     this.state = {
-      editorValue: JSON.parse(sessionStorage.getItem("test")) || "# 123"
+      editorValue: "# 123"
     };
   }
   render() {
@@ -37,7 +37,6 @@ export class ArticleDetails extends Component {
                 }}
                 escapeHtml={false}
               ></ReactMarkdown>
-              
             </div>
           </div>
           <Affix offsetTop={66}>

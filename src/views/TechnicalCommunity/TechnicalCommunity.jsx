@@ -4,6 +4,13 @@ import Nav from "./components/Nav";
 import Main from "./components/Main";
 
 export class TechnicalCommunity extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+  // componentDidMount() {
+  //   console.log(this);
+  // }
   render() {
     return (
       <div className="TechnicalCommunity">
@@ -14,7 +21,7 @@ export class TechnicalCommunity extends Component {
           </div>
         </div>
         <Nav></Nav>
-        <Main></Main>
+        <Main history={this.props.history}></Main>
       </div>
     );
   }

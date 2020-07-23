@@ -8,11 +8,9 @@ export class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: "/",
+      current: "/blog",
       showBg: false,
       path: props.location.pathname,
-      a: "",
-      b: 0
     };
   }
   handleClick = e => {
@@ -48,7 +46,6 @@ export class Header extends Component {
   }
   componentDidMount() {
     this.handleBg(this.props.location.pathname);
-    console.log(this.state.a);
   }
   render() {
     const { current } = this.state;

@@ -40,7 +40,7 @@ export class Layout extends Component {
             component={TechnicalCommunity}
           ></Route>
           <Route path="/blog/siteNav" component={SiteNav}></Route>
-          <Route path="/blog/articleDetails" component={ArticleDetails}></Route>
+          <Route path="/blog/articleDetails/:id" component={ArticleDetails}></Route>
         </main>
         <footer style={footerStyle}>版权所有&copy;lzjchina</footer>
       </div>
