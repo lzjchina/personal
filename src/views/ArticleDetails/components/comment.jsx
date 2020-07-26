@@ -15,13 +15,6 @@ for (let i = 0; i < 23; i++) {
   });
 }
 
-const IconText = ({ icon, text }) => (
-  <Space>
-    {React.createElement(icon)}
-    {text}
-  </Space>
-);
-
 const Comment = (props) => {
   return (
     <div className="Comment">
@@ -37,17 +30,14 @@ const Comment = (props) => {
           <List.Item
             key={item.title}
             actions={[
-              <IconText
-                icon={LikeOutlined}
-                text="156"
-                key="list-vertical-like-o"
-              />,
-              <IconText
-                icon={MessageOutlined}
-                text="回复"
-                key="list-vertical-message"
-                onClick={props.showModal}
-              />,
+              <Space>
+                <LikeOutlined />
+                <span>123</span>
+              </Space>,
+              <Space onClick={props.showModal}>
+                <MessageOutlined />
+                <span>123</span>
+              </Space>,
             ]}
           >
             <List.Item.Meta
