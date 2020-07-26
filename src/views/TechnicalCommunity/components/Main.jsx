@@ -3,10 +3,8 @@ import "../TechnicalCommunity.scss";
 import { Card } from "antd";
 const { Meta } = Card;
 
-const Main = props => {
-  const goDetails = id => {
-    console.log(props);
-    console.log(id);
+const Main = (props) => {
+  const goDetails = (id) => {
     props.history.push("/blog/articleDetails/" + id);
   };
   return (

@@ -5,13 +5,23 @@ import CodeBlock from "@/utils/CodeBlock";
 import MarkNav from "markdown-navbar";
 import "markdown-navbar/dist/navbar.css";
 import { Anchor, Affix } from "antd";
+import ZanArticle from "./components/ZanArticle";
+import SendComment from "./components/sendComment";
+import Comment from "./components/Comment";
 
 export class ArticleDetails extends Component {
   constructor() {
     super();
     this.state = {
-      editorValue: "# 123"
+      editorValue: "# 123",
+      Modalvisible: false,
     };
+  }
+  showModal() {
+    this.setState({ Modalvisible: true });
+  }
+  hideModal() {
+    this.setState({ Modalvisible: false });
   }
   render() {
     return (
@@ -33,11 +43,13 @@ export class ArticleDetails extends Component {
               <ReactMarkdown
                 source={this.state.editorValue}
                 renderers={{
-                  code: CodeBlock
+                  code: CodeBlock,
                 }}
                 escapeHtml={false}
               ></ReactMarkdown>
+              <ZanArticle showModal={() => this.showModal()}></ZanArticle>
             </div>
+            <Comment showModal={() => this.showModal()}></Comment>
           </div>
           <Affix offsetTop={66}>
             <Anchor>
@@ -45,6 +57,10 @@ export class ArticleDetails extends Component {
               <MarkNav className="navigation" source={this.state.editorValue} />
             </Anchor>
           </Affix>
+          <SendComment
+            Modalvisible={this.state.Modalvisible}
+            hideModal={() => this.hideModal()}
+          ></SendComment>
         </main>
       </div>
     );

@@ -6,16 +6,19 @@ import { Link } from "react-router-dom";
 
 export class Header extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
-      current: "/blog",
+      current: props.location.pathname,
       showBg: false,
       path: props.location.pathname,
     };
+    this.timer = null;
+    this.current = props.location.pathname;
   }
-  handleClick = e => {
+  handleClick = (e) => {
     // console.log("click ", e);
     this.setState({ current: e.key });
+    this.current = e.key;
     this.handleBg();
   };
   handleBg(path) {
@@ -36,9 +39,24 @@ export class Header extends Component {
       }
     };
   }
+  debounce(dalay, Fn) {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+    const _this = this;
+    return function () {
+      let args = arguments;
+      if (_this.timer) clearTimeout(_this.timer);
+      _this.timer = setTimeout(() => {
+        Fn.apply(_this, args);
+        _this.timer = null;
+      }, dalay);
+    };
+  }
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.location.pathname !== this.state.current) {
-      this.handleBg(this.props.location.pathname);
+    if (prevProps.location.pathname !== this.current) {
+      this.debounce(500, this.handleBg(this.props.location.pathname));
+      this.current = this.props.location.pathname;
     }
   }
   UNSAFE_componentWillMount() {
@@ -48,14 +66,14 @@ export class Header extends Component {
     this.handleBg(this.props.location.pathname);
   }
   render() {
-    const { current } = this.state;
+    // const { current } = this.state;
     const { showBg } = this.state;
     const MenuStyle = {
       backgroundColor: "transparent",
       border: 0,
       height: "51px",
       lineHeight: "51px",
-      color: "#fff"
+      color: "#fff",
     };
     return (
       <div
@@ -67,11 +85,11 @@ export class Header extends Component {
           <nav>
             <Menu
               onClick={this.handleClick}
-              selectedKeys={[current]}
+              selectedKeys={[this.current]}
               mode="horizontal"
               style={MenuStyle}
             >
-              {menu.map(items => (
+              {menu.map((items) => (
                 <Menu.Item key={items.path}>
                   <Link to={items.path} className="linkStyle">
                     {items.name}
