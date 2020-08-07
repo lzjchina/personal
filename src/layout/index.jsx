@@ -31,7 +31,7 @@ export class Layout extends Component {
     return (
       <div style={{ minWidth: "1200px" }}>
         <header style={headerStyle}>
-          <Header location={this.props.location} />
+          <Header />
         </header>
         <main style={this.props.location.pathname === "/blog" ? {} : mt56}>
           <Route exact path="/blog" component={Home}></Route>
@@ -40,7 +40,10 @@ export class Layout extends Component {
             component={TechnicalCommunity}
           ></Route>
           <Route path="/blog/siteNav" component={SiteNav}></Route>
-          <Route path="/blog/articleDetails/:id" component={ArticleDetails}></Route>
+          <Route
+            path="/blog/articleDetails/:id"
+            component={ArticleDetails}
+          ></Route>
         </main>
         <footer style={footerStyle}>版权所有&copy;lzjchina</footer>
       </div>

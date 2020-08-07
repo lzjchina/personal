@@ -7,7 +7,7 @@ import "markdown-navbar/dist/navbar.css";
 import { Anchor, Affix } from "antd";
 import ZanArticle from "./components/ZanArticle";
 import SendComment from "./components/sendComment";
-import Comment from "./components/Comment";
+import Comment from "./components/comment";
 
 export class ArticleDetails extends Component {
   constructor() {

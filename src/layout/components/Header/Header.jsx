@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./Header.scss";
 import { Menu } from "antd";
 import menu from "@/utils/menu";
@@ -10,12 +11,12 @@ export class Header extends Component {
     this.state = {
       current: props.location.pathname,
       showBg: false,
-      path: props.location.pathname,
+      path: props.location.pathname
     };
     this.timer = null;
     this.current = props.location.pathname;
   }
-  handleClick = (e) => {
+  handleClick = e => {
     // console.log("click ", e);
     this.setState({ current: e.key });
     this.current = e.key;
@@ -54,6 +55,7 @@ export class Header extends Component {
     };
   }
   componentDidUpdate(prevProps, prevState) {
+    // 监听路由变化
     if (prevProps.location.pathname !== this.current) {
       this.debounce(500, this.handleBg(this.props.location.pathname));
       this.current = this.props.location.pathname;
@@ -66,6 +68,7 @@ export class Header extends Component {
     this.handleBg(this.props.location.pathname);
   }
   render() {
+    const path = this.props.location.pathname;
     // const { current } = this.state;
     const { showBg } = this.state;
     const MenuStyle = {
@@ -73,7 +76,7 @@ export class Header extends Component {
       border: 0,
       height: "51px",
       lineHeight: "51px",
-      color: "#fff",
+      color: "#fff"
     };
     return (
       <div
@@ -85,11 +88,11 @@ export class Header extends Component {
           <nav>
             <Menu
               onClick={this.handleClick}
-              selectedKeys={[this.current]}
+              selectedKeys={[path]}
               mode="horizontal"
               style={MenuStyle}
             >
-              {menu.map((items) => (
+              {menu.map(items => (
                 <Menu.Item key={items.path}>
                   <Link to={items.path} className="linkStyle">
                     {items.name}
@@ -104,4 +107,4 @@ export class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
