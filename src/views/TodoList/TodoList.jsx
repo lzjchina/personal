@@ -2,11 +2,21 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./TodoList.scss";
 import { add, del } from "../../redux/actions/todoList";
+import { GroupSalesDetailsDeptList } from "@/api/test";
 
 @connect(state => ({
   num: state.num
 }))
 class TodoList extends Component {
+  UNSAFE_componentWillMount() {
+    console.log(123);
+    this.testAxios();
+  }
+  testAxios() {
+    GroupSalesDetailsDeptList().then(res => {
+      console.log(res);
+    });
+  }
   add() {
     this.props.dispatch(add({ type: "ADD", n: this.input.value })); // this.props = store
   }
