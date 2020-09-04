@@ -3,7 +3,7 @@ import "./TechnicalCommunity.scss";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 
-export class TechnicalCommunity extends Component {
+class TechnicalCommunity extends Component {
   constructor() {
     super();
     this.state = {};

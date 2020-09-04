@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class SiteNav extends Component {
+class SiteNav extends Component {
   render() {
     return (
       <div style={{ width: "100%", minHeight: "90vh" }}>

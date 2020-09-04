@@ -6,7 +6,7 @@ import Editor from "for-editor";
 // import MarkNav from "markdown-navbar";
 // import "markdown-navbar/dist/navbar.css";
 
-export class test extends Component {
+class test extends Component {
   constructor(props) {
     super(props);
     this.state = {

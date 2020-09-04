@@ -3,7 +3,7 @@ import "./Home.scss";
 import RecommendedContent from "./components/RecommendedContent";
 import PopularContent from "./components/PopularContent";
 
-export class Home extends Component {
+class Home extends Component {
   render() {
     return (
       <div className="Home">
